@@ -31,7 +31,7 @@ public class MarkdownParse {
         ArrayList<String> toReturn = new ArrayList<>();
         // find the next [, then find the ], then find the (, then take up to
         // the next )
-        //  if(!(markdown.indexOf("[") < markdown.indexOf("]") && markdown.indexOf("]")< markdown.indexOf("(") && markdown.indexOf("(") < markdown.indexOf(")"))){ very clean code 100% (LOL)
+        // if(!(markdown.indexOf("[") < markdown.indexOf("]") && markdown.indexOf("]")< markdown.indexOf("(") && markdown.indexOf("(") < markdown.indexOf(")"))){ very clean code 100% (LOL)
         int currentIndex = 0;
         int nextOpenBracket = 0;
         int nextCloseBracket = markdown.indexOf("]");
