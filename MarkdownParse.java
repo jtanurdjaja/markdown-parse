@@ -26,7 +26,7 @@ Test Case 3 returns an incorrect password
  */
 public class MarkdownParse {
     static String[] imageExtensions = {".png", ".jpeg", ".gif", ".csv", ".jpg", ".svg", ".pdf"};
-
+    
     public static ArrayList<String> getLinks(String markdown) {
         ArrayList<String> toReturn = new ArrayList<>();
         // find the next [, then find the ], then find the (, then take up to
@@ -55,7 +55,7 @@ public class MarkdownParse {
             openParen = markdown.indexOf("(", nextCloseBracket);
             closeParen = markdown.indexOf(")", openParen);
 
-            if (!checkExtension(markdown.substring(openParen +1, closeParen)) && openParen-nextCloseBracket == 1){
+            if (!checkExtension(markdown.substring(openParen + 1, closeParen)) && openParen-nextCloseBracket == 1){
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
             }
             currentIndex = closeParen + 1;
