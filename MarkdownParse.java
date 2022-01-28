@@ -40,6 +40,15 @@ public class MarkdownParse {
         while(currentIndex < markdown.length()) {
             if (nextCloseBracket > openParen) break;
             nextOpenBracket = markdown.indexOf("[", currentIndex);
+            
+            //checks if its an image instead of a link
+            if(markdown.contains("!")){
+                int exclamation = markdown.indexOf("!");
+                if(exclamation == nextOpenBracket-1){
+                    break;
+                }
+            }
+
             nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             openParen = markdown.indexOf("(", nextCloseBracket);
             closeParen = markdown.indexOf(")", openParen);
