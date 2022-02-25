@@ -97,22 +97,22 @@ public class MarkdownTest {
     @Test
     public void testSnippet1() throws IOException {
         String contents= Files.readString(Path.of("./snippet1.md"));
-        List<String> expect = List.of("url.com, google.com, ucsd.edu");
-        assertEquals(MarkdownParse.getLinks(contents), expect);
+        List<String> expect = List.of("url.com", "google.com", "ucsd.edu");
+        assertEquals(expect, MarkdownParse.getLinks(contents));
     }
 
     @Test
     public void testSnippet2() throws IOException {
         String contents= Files.readString(Path.of("./snippet2.md"));
-        List<String> expect = List.of("a.com, b.com, a.com(()), example.com");
-        assertEquals(MarkdownParse.getLinks(contents), expect);
+        List<String> expect = List.of("a.com", "b.com", "a.com(())", "example.com");
+        assertEquals(expect, MarkdownParse.getLinks(contents));
     }
 
     @Test
     public void testSnippet3() throws IOException {
         String contents= Files.readString(Path.of("./snippet3.md"));
-        List<String> expect = List.of("https://www.twitter.com, https://ucsd-cse15l-w22.github.io/, https://cse.ucsd.edu/, example.com");
-        assertEquals(MarkdownParse.getLinks(contents), expect);
+        List<String> expect = List.of("https://www.twitter.com", "https://ucsd-cse15l-w22.github.io/", "https://cse.ucsd.edu/", "example.com");
+        assertEquals(expect, MarkdownParse.getLinks(contents));
     }
     
 }
